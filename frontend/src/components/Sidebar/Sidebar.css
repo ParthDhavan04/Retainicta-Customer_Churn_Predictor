@@ -1,0 +1,72 @@
+/* src/components/Sidebar/Sidebar.css */
+
+/* Import a Google Font for a bold look */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Start with the sidebar off-screen */
+  width: 300px;
+  height: 100%; /* Ensure the sidebar occupies full height */
+  background-color: #2F4550;
+  color: #fff;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  transition: left 0.5s ease, transform 0.5s ease; /* Smooth transition for sliding in and out */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transform: scale(0.95); /* Slightly scale down for a pop-in effect */
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  justify-content: center; /* Center the items vertically */
+}
+
+.sidebar.visible {
+  left: 0; /* Show the sidebar */
+  transform: scale(1); /* Scale up to original size */
+}
+
+.sidebar.hidden {
+  left: -300px; /* Hide the sidebar */
+  transform: scale(0.95); /* Scale down slightly */
+}
+
+.sidebar h1 {
+  margin-bottom: 40px; /* Adjusted margin for better spacing */
+  font-family: 'Oswald', sans-serif; /* Bolder font for heading */
+  font-size: 40px; /* Increased font size for better visibility */
+  text-align: center; /* Center align the text */
+}
+
+.sidebar nav {
+  flex: 1; /* Take up available space */
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin: 20px 0; /* Increased vertical spacing between each link */
+}
+
+.sidebar nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px; /* Increased font size for better readability */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+  display: block; /* Ensure full width for padding */
+  padding: 15px 20px; /* Increased padding for better spacing */
+  text-align: center; /* Center align text */
+  border-radius: 8px; /* Rounded corners for the box */
+  background-color: #1f3a4e; /* Background color for the box */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for a subtle 3D effect */
+}
+
+.sidebar nav ul li a:hover {
+  text-decoration: underline;
+  color: #B8DBD9; /* Change color on hover for a more interactive effect */
+  background-color: #2c4a5a; /* Darker background color on hover */
+}

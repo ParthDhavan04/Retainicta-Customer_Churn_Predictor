@@ -1,0 +1,92 @@
+/* src/components/Predict/Predict.css */
+
+.predict-container {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(to bottom, #B8DBD9, #BFB48F);
+  position: relative;
+  overflow: hidden;
+}
+
+.predict-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  margin-left: 250px;
+}
+
+h2 {
+  font-size: 36px;
+  color: #2F4550;
+  margin-bottom: 30px;
+}
+
+.predict-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.predict-form-group {
+  flex: 1 1 calc(50% - 30px);
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.predict-form-group input {
+  padding: 14px;
+  border: 2px solid #2F4550;
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #2F4550;
+  transition: all 0.3s ease;
+}
+
+.predict-form-group input:focus {
+  border-color: #1f3441;
+  box-shadow: 0 0 10px rgba(47, 69, 80, 0.4);
+  outline: none;
+}
+
+.predict-form-group input::placeholder {
+  color: #B8DBD9;
+}
+
+.predict-btn {
+  background-color: #2F4550;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 30px;
+  width: 100%; /* Make button full width */
+  max-width: 250px; /* Limit button width */
+}
+
+.predict-btn:hover {
+  background-color: #1f3441;
+  transform: scale(1.05);
+}
+
+.predict-btn:active {
+  transform: scale(0.98);
+}
+
+.result {
+  margin-top: 30px;
+  color: #2F4550;
+  font-size: 20px;
+  font-weight: bold;
+}

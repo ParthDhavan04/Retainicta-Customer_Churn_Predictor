@@ -1,0 +1,139 @@
+/* src/components/ContactUs/ContactUs.css */
+
+/* Container for Contact Us page */
+.contactus-container {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(to right, #B8DBD9, #BFB48F); /* Consistent color scheme */
+}
+
+/* Content area specific to Contact Us page */
+.contactus-content {
+  flex: 1;
+  padding: 40px;
+  margin-left: 300px; /* Ensure content doesn't overlap the sidebar */
+  box-sizing: border-box; /* Include padding in width and height calculations */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align content horizontally */
+  justify-content: center; /* Center align content vertically */
+  overflow: hidden; /* Ensure no overflow */
+}
+
+/* Heading for Contact Us page */
+.contactus-heading {
+  font-size: 36px; /* Main heading font size */
+  font-family: 'Oswald', sans-serif; /* Font for the heading */
+  color: #2F4550; /* Consistent color */
+  margin-bottom: 30px; /* Space below the heading */
+  text-align: center; /* Center align the heading */
+  animation: fadeInUp 1s forwards; /* Apply animation */
+}
+
+/* Section styling for Contact Us page */
+.contactus-section {
+  width: 100%;
+  max-width: 800px; /* Limit the width of sections */
+  box-sizing: border-box; /* Include padding in width and height calculations */
+  margin-bottom: 40px; /* Space between sections */
+}
+
+/* Section heading styling */
+.contactus-section-heading {
+  font-size: 28px; /* Font size for section headings */
+  font-family: 'Oswald', sans-serif; /* Font for section headings */
+  color: #2F4550; /* Consistent color */
+  margin-bottom: 15px; /* Space below section headings */
+  text-align: center; /* Center align section headings */
+}
+
+/* Section paragraph styling */
+.contactus-section-paragraph {
+  font-size: 18px; /* Font size for paragraph text */
+  line-height: 1.6; /* Line height for readability */
+  font-family: 'Arial', sans-serif; /* Font for paragraphs */
+  text-align: center; /* Center align paragraph text */
+}
+
+/* Form styling */
+.contactus-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between form elements */
+  width: 100%;
+}
+
+.contactus-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactus-form-label {
+  font-size: 18px; /* Font size for form labels */
+  margin-bottom: 5px; /* Space below form labels */
+}
+
+.contactus-form-input {
+  font-size: 16px; /* Font size for form inputs */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.contactus-form-button {
+  font-size: 18px; /* Font size for button */
+  padding: 10px;
+  background-color: #2F4550; /* Consistent color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contactus-form-button:hover {
+  background-color: #1d3238; /* Darker shade on hover */
+}
+
+/* Social media section styling */
+.contactus-social {
+  width: 100%;
+  max-width: 800px; /* Limit the width of social section */
+  text-align: center; /* Center align the social section */
+}
+
+.contactus-social-heading {
+  font-size: 28px; /* Font size for social section heading */
+  font-family: 'Oswald', sans-serif; /* Font for social section heading */
+  color: #2F4550; /* Consistent color */
+  margin-bottom: 20px; /* Space below social section heading */
+}
+
+.contactus-social-icons {
+  display: flex;
+  justify-content: center; /* Center align social icons */
+  gap: 20px; /* Space between social icons */
+}
+
+.contactus-social-icon {
+  width: 40px; /* Size of social icons */
+  height: 40px;
+  transition: transform 0.3s ease; /* Smooth transform effect */
+}
+
+.contactus-social-icon:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Animation Keyframes for Fade In and Up Effect */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

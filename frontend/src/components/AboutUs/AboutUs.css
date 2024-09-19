@@ -1,0 +1,85 @@
+/* src/components/AboutUs/AboutUs.css */
+
+/* Container for About Us page */
+.about-us-container {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(to right, #B8DBD9, #BFB48F);
+  overflow: hidden; /* Ensure no overflow of the container */
+}
+
+/* Content styling specific to About Us page */
+.about-us-content {
+  flex: 1;
+  padding: 40px 20px; /* Adjusted padding for content */
+  margin-left: 250px; /* Space for sidebar */
+  box-sizing: border-box; /* Include padding in width and height calculations */
+  overflow-y: auto; /* Add scroll if content overflows */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align content horizontally */
+}
+
+/* Main heading styling for About Us page */
+.about-us-heading {
+  font-size: 36px; /* Adjusted font size for the main heading */
+  font-family: 'Oswald', sans-serif; /* Font for the main heading */
+  color: #2F4550; /* Darker color for the heading */
+  margin-bottom: 20px;
+  text-align: center; /* Center align the heading */
+  opacity: 1; /* Ensure text is visible */
+  transform: translateY(0); /* Ensure text is in place */
+  animation: fadeInUp 1s forwards; /* Apply animation */
+}
+
+/* Animation Keyframes for Fade In and Up Effect */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section styling for About Us page */
+.about-us-section {
+  margin-bottom: 30px; /* Space between sections */
+  width: 100%; /* Ensure section takes full width available */
+  max-width: 800px; /* Limit the width of sections for better readability */
+  box-sizing: border-box; /* Include padding in width and height calculations */
+}
+
+/* Section heading styling for About Us page */
+.about-us-section-heading {
+  font-size: 28px; /* Adjusted font size for section headings */
+  font-family: 'Oswald', sans-serif; /* Font for section headings */
+  color: #2F4550; /* Color for section headings */
+  margin-bottom: 10px;
+  text-align: center; /* Center align section headings */
+}
+
+/* Section paragraph styling for About Us page */
+.about-us-section-paragraph {
+  font-size: 18px; /* Adjusted font size for paragraph text */
+  line-height: 1.6; /* Line height for readability */
+  font-family: 'Arial', sans-serif; /* Font for paragraphs */
+  width: 100%; /* Ensure paragraph takes full width available */
+  text-align: center; /* Center align paragraph text */
+}
+
+/* Add Shadow to Section for Depth Effect */
+.about-us-section {
+  background: #fff; /* White background for sections */
+  padding: 20px; /* Padding for sections */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+/* Section Hover Shadow Effect */
+.about-us-section:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
