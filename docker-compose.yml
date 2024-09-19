@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  node:
+    build:
+      context: ./backend/node
+    ports:
+      - "4000:4000"
+    depends_on:
+      - flask
+    networks:
+      - backend
+
+  flask:
+    build:
+      context: ./backend/flask
+    ports:
+      - "5000:5000"
+    networks:
+      - backend
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
