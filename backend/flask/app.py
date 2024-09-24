@@ -23,8 +23,8 @@ class CustomerChurnClassifier:
 
 # Initialize the classifier
 customer_churn = CustomerChurnClassifier(
-    model_path=r'C:\Users\rajiv\OneDrive\Desktop\Dashboard\backend\flask\model\customer_churn_batch1aiml.pkl',
-    encoder_path=r'C:\Users\rajiv\OneDrive\Desktop\Dashboard\backend\flask\model\encoder.pkl'
+    model_path=r'../Pickle-File/customer_churn_batch1aiml.pkl',
+    encoder_path=r'../Pickle-File/encoder.pkl'
 )
 
 @app.route('/predict', methods=['POST'])

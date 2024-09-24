@@ -1,9 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import axios from 'axios';
-import Sidebar from '../Sidebar/Sidebar';
+import Sidebar from '../../components/Sidebar/Sidebar';
 import './Predict.css';
 
 const Predict = () => {
+    const [sidebarVisible, setSidebarVisible] = useState(false);
+
+    const handleMouseMove = useCallback((e) => {
+        const mouseX = e.clientX;
+
+        // Show sidebar when mouse is near the left edge (within 100px from the left)
+        if (mouseX < 100) {
+            setSidebarVisible(true);
+        } else {
+            setSidebarVisible(false);
+        }
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, [handleMouseMove]);
+
     const [formData, setFormData] = useState({
         age: '', tenure: '', usage_frequency: '', support_calls: '', payment_delay: '',
         total_spend: '', last_interaction: '', gender: '', subscription_type: '', contract_length: ''
@@ -27,14 +48,14 @@ const Predict = () => {
 
     return (
         <div className="predict-container">
-            <Sidebar />
+            <Sidebar isVisible={sidebarVisible} /> {/* Corrected visibility reference */}
             <div className="predict-content">
                 <h2>Customer Churn Prediction</h2>
                 <form onSubmit={handleSubmit} className="predict-form">
                     {Object.keys(formData).map((field) => (
                         <div className="predict-form-group" key={field}>
                             <input
-                                type="text"
+                                type={field === 'age' || field === 'tenure' || field === 'support_calls' || field === 'payment_delay' || field === 'total_spend' || field === 'last_interaction' ? 'number' : 'text'}
                                 name={field}
                                 placeholder={field.replace('_', ' ').toUpperCase()}
                                 value={formData[field]}

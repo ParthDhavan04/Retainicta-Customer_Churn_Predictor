@@ -1,14 +1,13 @@
 // src/components/Home/Home.js
-import React, { useState, useEffect, useCallback } from 'react'; // Add useCallback
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import Sidebar from '../Sidebar/Sidebar';
+import Sidebar from '../../components/Sidebar/Sidebar.js';
 import './Home.css';
 import rightImage from '../../assets/right.png';
 
 const Home = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
-  // Use useCallback to memoize the handler function
   const handleMouseMove = useCallback((e) => {
     const mouseX = e.clientX;
 
@@ -26,11 +25,11 @@ const Home = () => {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, [handleMouseMove]); // Include handleMouseMove in the dependency array
+  }, [handleMouseMove]);
 
   return (
     <div className="home-container">
-      <Sidebar className={sidebarVisible ? 'visible' : 'hidden'} />
+      <Sidebar isVisible={sidebarVisible} />
       <div className="content">
         <div className="text-container">
           <h1 className="main-heading">

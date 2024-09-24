@@ -1,12 +1,32 @@
 // src/components/AboutUs/AboutUs.js
-import React from 'react';
-import Sidebar from '../Sidebar/Sidebar';
+import React,{useCallback,useState,useEffect} from 'react';
+import Sidebar from '../../components/Sidebar/Sidebar';
 import './AboutUs.css';
 
 const AboutUs = () => {
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+
+  const handleMouseMove = useCallback((e) => {
+    const mouseX = e.clientX;
+
+    // Show sidebar when mouse is near the left edge (within 100px from the left)
+    if (mouseX < 100) {
+      setSidebarVisible(true);
+    } else {
+      setSidebarVisible(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [handleMouseMove]);
   return (
     <div className="about-us-container">
-      <Sidebar />
+      <Sidebar isVisible={sidebarVisible}/>
       <div className="about-us-content">
         <h1 className="about-us-heading">About Us</h1>
         <section className="about-us-section">
