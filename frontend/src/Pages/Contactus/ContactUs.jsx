@@ -1,6 +1,6 @@
 // src/components/ContactUs/ContactUs.js
-import React from 'react';
-import Sidebar from '../Sidebar/Sidebar';
+import React,{useCallback,useEffect,useState} from 'react';
+import Sidebar from '../../components/Sidebar/Sidebar';
 import './ContactUs.css';
 
 // Social media icons
@@ -9,9 +9,30 @@ import twitterIcon from '../../assets/instagram.jpeg';
 import linkedinIcon from '../../assets/linkedin.png';
 
 const ContactUs = () => {
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+
+  const handleMouseMove = useCallback((e) => {
+    const mouseX = e.clientX;
+
+    // Show sidebar when mouse is near the left edge (within 100px from the left)
+    if (mouseX < 100) {
+      setSidebarVisible(true);
+    } else {
+      setSidebarVisible(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [handleMouseMove]);
+
   return (
     <div className="contactus-container">
-      <Sidebar />
+      <Sidebar isVisible={sidebarVisible} />
       <div className="contactus-content">
         <h1 className="contactus-heading">Contact Us</h1>
         <section className="contactus-section">

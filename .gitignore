@@ -1,0 +1,17 @@
+# Node modules
+node_modules/
+
+# Python virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Build files
+build/
+dist/
+
+# Misc
+.env

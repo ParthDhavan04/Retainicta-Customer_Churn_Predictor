@@ -21,17 +21,6 @@
   flex-direction: column; /* Arrange items vertically */
   justify-content: center; /* Center the items vertically */
 }
-
-.sidebar.visible {
-  left: 0; /* Show the sidebar */
-  transform: scale(1); /* Scale up to original size */
-}
-
-.sidebar.hidden {
-  left: -300px; /* Hide the sidebar */
-  transform: scale(0.95); /* Scale down slightly */
-}
-
 .sidebar h1 {
   margin-bottom: 40px; /* Adjusted margin for better spacing */
   font-family: 'Oswald', sans-serif; /* Bolder font for heading */

@@ -1,24 +1,10 @@
 // src/components/Sidebar/Sidebar.js
-import React, { useState } from 'react';
+import React from 'react';
 import './Sidebar.css';
 
-const Sidebar = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsVisible(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsVisible(false);
-  };
-
+const Sidebar = ({ isVisible }) => {
   return (
-    <div 
-      className={`sidebar ${isVisible ? 'visible' : 'hidden'}`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className={`sidebar ${isVisible ? 'visible' : 'hidden'}`}>
       <h1>RETAINICTA</h1>
       <nav>
         <ul>
