@@ -1,12 +1,12 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './components/Home/Home';
-import Signup from './components/Signup/Signup';
-import Login from './components/Login/Login';
-import Predict from './components/Predict/Predict';
-import ContactUs from './components/Contactus/ContactUs';
-import AboutUs from './components/AboutUs/AboutUs';
+import Home from './Pages/Home/Home'
+import Signup from './Pages/Signup/Signup';
+import Login from './Pages/Login/Login';
+import Predict from './Pages/Predict/Predict';
+import ContactUs from './Pages/Contactus/ContactUs.jsx';
+import AboutUs from './Pages/AboutUs/AboutUs.jsx';
 
 function App() {
   return (
